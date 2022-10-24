@@ -1,4 +1,4 @@
-include "main.h"
+#include "main.h"
 /**
  * puts_half - function that prints half of a string, followed by a new line.
  * @str: declaration of n and paramters for the function
@@ -11,20 +11,27 @@ include "main.h"
  */
 void puts_half(char *str)
 {
-	int count = 0, i;
+	int c, a;
+	char l;
 
-	while (count >= 0)
+	for (c = 0; str[c] != 0; c++)
 	{
-		if (str[count] == '\0')
-			break;
-		count++;
 	}
-	if (count % 2 == 1)
-		i = count / 2;
+	if (c % 2 == 0)
+	{
+		for ((a = c / 2); str[a] != 0; a++)
+		{
+			l = str[a];
+			_putchar(l);
+		}
+	}
 	else
-		i = (count - 1) / 2;
-
-	for (i++; i < count; i++)
-		_putchar(str[i]);
- _putchar('\n');
+        {
+                for ((a = (c - 1) / 2); str[a] != 0; a++)
+                {
+                        l = str[a];
+                        _putchar(l);
+                }
+        }
+	_putchar('\n');
 }
