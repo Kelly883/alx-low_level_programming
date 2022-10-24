@@ -4,7 +4,7 @@
  * print_array - prints n element of an array of integers
  * @a: int to be  checked
  * @n: int to be  checked
- * Return: 0 
+ * Return: 0
  */
 void print_array(int *a, int n)
 {
