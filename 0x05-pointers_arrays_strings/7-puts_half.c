@@ -4,29 +4,27 @@ include "main.h"
  * @str: declaration of n and paramters for the function
  * Return: Always 0.
  */
+/**
+ * puts_half - prints half of a string.
+ * @str: input string.
+ * Return: no return.
+ */
 void puts_half(char *str)
 {
-	int c, a;
-	char l;
+	int count = 0, i;
 
-	for (c = 0; str[c] != 0; c++)
+	while (count >= 0)
 	{
+		if (str[count] == '\0')
+			break;
+		count++;
 	}
-	if (c % 2 == 0)
-	{
-		for ((a = c / 2); str[a] != 0; a++)
-		{
-			l = str[a];
-			_putchar(l);
-		}
-	}
+	if (count % 2 == 1)
+		i = count / 2;
 	else
-        {
-                for ((a = (c - 1) / 2); str[a] != 0; a++)
-                {
-                        l = str[a];
-                        _putchar(l);
-                }
-        }
-	_putchar('\n');
+		i = (count - 1) / 2;
+
+	for (i++; i < count; i++)
+		_putchar(str[i]);
+ _putchar('\n');
 }
