@@ -1,23 +1,29 @@
 #include "lists.h"
+#include <stdio.h>
+#include <stddef.h>
+#include <string.h>
 
 /**
- * get_nodeint_at_index - the nth node of a listint_t linked list.
- * @head: pointer of the first node
- * @index: index is the index of the node
- *
- * Return: pointer of Index
- */
+ * get_nodeint_at_index - return address of nth node
+ * @head: pointer to head of list
+ * @index: index of node to return
+ * Return: address of node, NULL if failed
+ **/
 listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 {
+	listint_t *next;
 	unsigned int i;
 
 	if (head == NULL)
 		return (NULL);
+
+	next = head;
+
 	for (i = 0; i < index; i++)
 	{
-		head = head->next;
-		if (head == NULL)
+		if (next == NULL)
 			return (NULL);
+		next = next->next;
 	}
-	return (head);
+	return (next);
 }
